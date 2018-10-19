@@ -1,31 +1,21 @@
 package com.home.VideoRental;
 
 public class Video {
-	private String name;
-	private int id; 
-	private String genre;
-	private double price;
+	String name;
+	int stock;	
 	
-	public void Video() {
+	public String createVideo(String name) {
 		this.name = name;
-		this.genre = genre;
-		this.price = price;
+		return this.name;
 	}
-	
-	public void setVideo() {
-		this.name = "Gone girl";
-		this.genre = "Action";
-		this.price = 5.00;
-	}
-	
-	public boolean getVideo(String name) {
-		setVideo();
-		if(name.equals(this.name)) {
-			return true;
-		}
-		else
-			return false;
-	}
-	
 
+	public boolean getVideo(String name) {
+		this.name = name;
+		if(this.name.equals(name)) {
+			return true;
+		}	
+			else
+				return false;
+		}
+	
 }

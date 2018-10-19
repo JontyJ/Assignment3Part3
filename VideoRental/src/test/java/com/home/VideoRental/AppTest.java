@@ -1,6 +1,7 @@
 package com.home.VideoRental;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
@@ -11,18 +12,24 @@ import org.junit.Test;
 public class AppTest 
 {
  @Test	
- public void testVideoName() {
-	 String name = "Gone girl"; 
+ public void testVideoCreation() {
+	  String name = "Gone girl";
+	  String ogName;
+		 
+	  ogName = new Video().createVideo(name); 
+		 
+	  assertEquals(name, ogName);
+}
+	
+ @Test	
+ public void testVideoSearch() {
+	 String name = "Gone girl";
+	 String ogName;
+	 boolean result;
 	 
-	 boolean video = new Video().getVideo(name); 
+	 ogName = new Video().createVideo(name); 
+	 result = new Video().getVideo(name); 
 	 
-	 assertThat(video, is(true));
- }
- 
- @Test
- public void testVideoCreate() {
-	 String name = "new";
-	 
-	 
+	 assertThat(result, is(true));
  }
 }
